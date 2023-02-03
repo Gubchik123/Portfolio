@@ -79,7 +79,7 @@ section {
 }
 
 .sticker {
-    width: 35%;
+    width: 50%;
     min-width: 290px;
     height: 300px;
     padding: 30px;
@@ -87,10 +87,14 @@ section {
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+@media screen and (max-width: 767px) {
+    .sticker { width: 100%; }
+}
+
 .yellow_bg { background-color: rgb(255, 255, 120); }
 .red_bg { background-color: rgb(255, 95, 95); }
 .blue_bg { background-color: rgb(0, 150, 227); }
-.green_bg { background-color: rgb(0, 150, 0); }
+.green_bg { background-color: rgb(0, 200, 0); }
 .purple_bg { background-color: rgb(150, 0, 150); }
 
 #go-to-top-btn {
