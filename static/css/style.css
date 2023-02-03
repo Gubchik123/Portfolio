@@ -73,7 +73,25 @@ header {
 .top-menu li a:hover::after { transform: scale(1); }
 
 /* Main styles */
-main { padding: 80px 0; height: 4000px; }
+section { 
+    padding: 50px 0; 
+    scroll-margin-top: 50px;
+}
+.section-title { color: rgb(255, 255, 255); }
+
+.sticker {
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    opacity: 0.95;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.yellow_bg { background-color: rgb(255, 255, 120); }
+.red_bg { background-color: rgb(255, 95, 95); }
+.blue_bg { background-color: rgb(0, 150, 227); }
+.green_bg { background-color: rgb(0, 150, 0); }
+.purple_bg { background-color: rgb(150, 0, 150); }
 
 #go-to-top-btn {
     z-index: 80;
