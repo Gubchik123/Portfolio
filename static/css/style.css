@@ -112,7 +112,11 @@ section {
 
 /* Footer styles */
 footer { 
-    z-index: 90; 
+    z-index: 70; 
     opacity: 0.8;
     position: relative;
+}
+
+@media screen and (max-width: 375px) {
+    .social_networks a ion-icon { font-size: 1.3em; }
 }
