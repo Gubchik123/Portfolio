@@ -44,17 +44,31 @@ body {
     justify-content: center;
 }
 
-a { 
+a, #go-to-top-btn { 
     opacity: 0.8; 
+    color: black;
     transition: 0.3s; 
-    color: whitesmoke;
 }
-a:hover { opacity: 1; }
+a:hover, #go-to-top-btn:hover { opacity: 1; }
 
 /* Header styles */
 
 /* Main styles */
-main { padding: 80px 0; }
+main { padding: 80px 0; height: 4000px; }
+
+#go-to-top-btn {
+    z-index: 80;
+    border: none;
+    outline: none;
+    position: fixed;
+    width: 50px; height: 50px;
+    right: 30px; bottom: 30px;
+    display: none; /* Hidden by default */
+
+    color: white;
+    background-color: var(--bs-dark);
+}
+#go-to-top-btn ion-icon { font-size: 1.5em; }
 
 /* Footer styles */
 footer { 
