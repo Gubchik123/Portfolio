@@ -120,3 +120,7 @@ footer {
 @media screen and (max-width: 375px) {
     .social_networks a ion-icon { font-size: 1.3em; }
 }
+
+@media screen and (max-width: 560px) {
+    footer { z-index: 90; }
+}
