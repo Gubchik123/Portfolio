@@ -79,7 +79,8 @@ section {
 }
 
 .sticker {
-    width: 300px;
+    width: 35%;
+    min-width: 290px;
     height: 300px;
     padding: 30px;
     opacity: 0.95;
