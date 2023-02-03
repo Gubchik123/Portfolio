@@ -1,0 +1,63 @@
+/* Custom scrollbar */
+::-webkit-scrollbar { 
+    width: 15px; 
+    background-color: #2f3542;
+}
+::-webkit-scrollbar-track { 
+    border-radius: 7px;
+    background-color: #2f3542; 
+}
+::-webkit-scrollbar-thumb {
+    opacity: 0.7;
+    border-radius: 7px;
+    background: darkgray; 
+}
+::-webkit-scrollbar-thumb:hover { opacity: 1; }
+
+/* Custom text selection */
+::-moz-selection {
+    color: white;
+    background: #2f3542;
+}
+::selection {
+    color: white;
+    background: #2f3542;
+}
+
+/* Global styles */
+body {
+    background-size: 100% 350px;
+    background-repeat: repeat-y;
+    background-color: rgb(120, 50, 0);
+    background-image: url("../images/bg.jpg");
+
+    -o-background-size: 100% 350px;
+    -ms-background-size: 100% 350px;
+    -moz-background-size: 100% 350px;
+    -khtml-background-size: 100% 350px;
+    -webkit-background-size: 100% 350px;
+}
+
+.content-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a { 
+    opacity: 0.8; 
+    transition: 0.3s; 
+    color: whitesmoke;
+}
+a:hover { opacity: 1; }
+
+/* Header styles */
+
+/* Main styles */
+main { padding: 80px 0; }
+
+/* Footer styles */
+footer { 
+    z-index: 90; 
+    position: relative;
+}
