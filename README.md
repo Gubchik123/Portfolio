@@ -5,4 +5,4 @@ _Page for displaying all my deployed projects_
 
 Click **<a href="https://gubchik123-project-board.netlify.app/" target="_blank">here</a>** to open my project board page
 
-<img title="Demo" alt="Demo image" src="./md_images/demo.png">
+<img title="Demo" alt="Demo image" src="./md_images/demo.jpg">
