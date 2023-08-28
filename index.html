@@ -66,34 +66,47 @@
 
 				<ul class="nav top-menu">
 					<li class="nav-item">
-						<a href="#django_projects" class="nav-link">Django</a>
+						<a href="#sites" class="nav-link">Sites</a>
 					</li>
 					<li class="nav-item">
-						<a href="#flask_projects" class="nav-link">Flask</a>
+						<a href="#bots" class="nav-link">Bots</a>
 					</li>
 					<li class="nav-item">
-						<a href="#bots_projects" class="nav-link">Bots</a>
+						<a href="#apis" class="nav-link">APIs</a>
 					</li>
 					<li class="nav-item">
-						<a href="#other_projects" class="nav-link">Other</a>
+						<a href="#other" class="nav-link">Other</a>
 					</li>
 				</ul>
 			</header>
 
-			<!-- The common block with my Django and Flask project -->
-			<section>
+			<!-- The block for "Sites" h2 title  -->
+			<section id="sites" style="padding-bottom: 0">
 				<div class="container">
+					<!-- The title of the "Other projects" block -->
 					<div class="row">
-						<!-- The block with my Django project -->
-						<section
-							id="django_projects"
-							class="col-md-6 col-sm-12"
-						>
+						<div class="col-12">
 							<h2
 								class="text-center text-white text-uppercase mb-5"
 							>
-								Django project
+								Sites
 							</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- The common block with my Django and Flask project -->
+			<section style="padding-top: 0">
+				<div class="container">
+					<div class="row">
+						<!-- The block with my Django site -->
+						<section class="col-md-6 col-sm-12">
+							<h3
+								class="text-center text-white text-uppercase mb-5"
+							>
+								Django site
+							</h3>
 							<div
 								class="sticker w-100 blue_bg d-flex flex-column justify-content-around"
 							>
@@ -132,13 +145,13 @@
 								</h6>
 							</div>
 						</section>
-						<!-- The block with my Flask project -->
-						<section id="flask_projects" class="col-md-6 col-sm-12">
-							<h2
+						<!-- The block with my Flask site -->
+						<section class="col-md-6 col-sm-12">
+							<h3
 								class="text-center text-white text-uppercase mb-5"
 							>
-								Flask project
-							</h2>
+								Flask site
+							</h3>
 							<div
 								class="sticker yellow_bg w-100 d-flex flex-column justify-content-around"
 							>
@@ -183,7 +196,7 @@
 			</section>
 
 			<!-- The block with my Bots -->
-			<section id="bots_projects">
+			<section id="bots">
 				<div class="container">
 					<!-- The title of the "Bots" block -->
 					<div class="row">
@@ -279,8 +292,82 @@
 				</div>
 			</section>
 
+			<!-- The block with my APIs -->
+			<section id="apis">
+				<div class="container">
+					<!-- The title of the "APIs" block -->
+					<div class="row">
+						<div class="col-12">
+							<h2
+								class="text-center text-white text-uppercase mb-5"
+							>
+								APIs
+							</h2>
+						</div>
+					</div>
+					<!-- The content of the "APIs" block -->
+					<div class="row">
+						<!-- "LapZoneAPI" project -->
+						<div class="col-md-6 col-sm-12 mb-4">
+							<div
+								class="sticker orange_bg w-100 d-flex flex-column justify-content-around"
+							>
+								<div>
+									<!-- Project title -->
+									<h3 class="text-center mb-3">LapZoneAPI</h3>
+									<!-- Link to project GitHub repository -->
+									<h6 class="text-center">
+										(
+										<a
+											target="_blank"
+											href="https://github.com/Gubchik123/LapZoneAPI"
+										>
+											GitHub
+										</a>
+										)
+									</h6>
+								</div>
+								<!-- Project stack -->
+								<p>
+									Django (+ Django REST Framework, djoser,
+									ckeditor, cors-headers), PostgreSQL
+								</p>
+								<!-- Project description -->
+								<h6>API for the Internet shop "LapZone"</h6>
+							</div>
+						</div>
+						<!-- "ITishAPI" project -->
+						<div class="col-md-6 col-sm-12">
+							<div
+								class="sticker orange_bg w-100 d-flex flex-column justify-content-around"
+							>
+								<div>
+									<!-- Project title -->
+									<h3 class="text-center mb-3">ITishAPI</h3>
+									<!-- Link to project GitHub repository -->
+									<h6 class="text-center">
+										(
+										<a
+											target="_blank"
+											href="https://github.com/Gubchik123/ITishAPI"
+										>
+											GitHub
+										</a>
+										)
+									</h6>
+								</div>
+								<!-- Project stack -->
+								<p>FastAPI (+ SQLAlchemy), MySQL</p>
+								<!-- Project description -->
+								<h6>API for the blog site "ITish"</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- The block for "Other projects" h2 title  -->
-			<section id="other_projects" style="padding-bottom: 0">
+			<section id="other" style="padding-bottom: 0">
 				<div class="container">
 					<!-- The title of the "Other projects" block -->
 					<div class="row">
@@ -417,7 +504,7 @@
 							>
 								<div>
 									<!-- Project title -->
-									<h3 class="text-center mt-4 mb-2">
+									<h3 class="text-center mb-2">
 										<a
 											target="_blank"
 											href="https://gubchik123-weather.netlify.app"

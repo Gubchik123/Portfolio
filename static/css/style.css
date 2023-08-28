@@ -94,10 +94,11 @@ section {
     .sticker { width: 100%; }
 }
 
-.yellow_bg { background-color: rgb(255, 255, 120); }
-.red_bg { background-color: rgb(255, 95, 95); }
-.blue_bg { background-color: rgb(0, 150, 227); }
-.green_bg { background-color: rgb(0, 200, 0); }
+.yellow_bg { background-color: #ffff78; }
+.red_bg { background-color: #ff5f5f; }
+.blue_bg { background-color: #0096e3; }
+.green_bg { background-color: #00c800; }
+.orange_bg { background-color: #ff9f00; }
 /* .purple_bg { background-color: rgb(150, 0, 150); } */
 
 #go-to-top-btn {
