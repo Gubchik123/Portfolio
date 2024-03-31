@@ -8,3 +8,8 @@ _Page for displaying all my deployed projects_
 Click **<a href="https://portfolio.hubariev.com/" target="_blank">here</a>** to open my project board page
 
 <img title="Demo" alt="Demo image" src="./md_images/demo.jpg">
+
+            
+### License
+
+[Project-board](https://github.com/Gubchik123/Project-board) is licensed under the [MIT License](https://github.com/Gubchik123/Project-board/blob/master/LICENSE.md).
