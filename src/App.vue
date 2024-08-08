@@ -1,16 +1,25 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<PageHeader />
+	<MainSection />
+	<GoToTopButton />
+	<PageFooter />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PageHeader from "./components/PageHeader.vue";
+import MainSection from "./components/MainSection.vue";
+import GoToTopButton from "./components/GoToTopButton.vue";
+import PageFooter from "./components/PageFooter.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	name: "App",
+	components: {
+		PageHeader,
+		MainSection,
+		GoToTopButton,
+		PageFooter,
+	},
+};
 </script>
 
 <style>
