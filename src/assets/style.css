@@ -1,0 +1,60 @@
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 12px;
+	background-color: #1e1e1e;
+}
+::-webkit-scrollbar-track {
+	border-radius: 7px;
+	background-color: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+	opacity: 0.7;
+	border-radius: 7px;
+	background: darkgray;
+}
+::-webkit-scrollbar-thumb:hover {
+	opacity: 1;
+}
+
+/* Custom text selection */
+::-moz-selection {
+	color: white;
+	background: #2f3542;
+}
+::selection {
+	color: white;
+	background: #2f3542;
+}
+
+/* Global styles */
+body {
+	background-size: 100% 350px;
+	background-repeat: repeat-y;
+	background-color: rgb(120, 50, 0);
+	background-image: url("./bg.jpg");
+
+	-o-background-size: 100% 350px;
+	-ms-background-size: 100% 350px;
+	-moz-background-size: 100% 350px;
+	-khtml-background-size: 100% 350px;
+	-webkit-background-size: 100% 350px;
+}
+
+ion-icon {
+	font-size: 2em;
+}
+
+.content-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a {
+	opacity: 0.8;
+	color: black;
+	transition: 0.3s;
+}
+a:hover {
+	opacity: 1;
+}
