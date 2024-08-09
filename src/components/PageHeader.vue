@@ -10,6 +10,14 @@
 			<ion-icon name="albums" class="ms-3 text-white"></ion-icon>
 			<span class="fs-4 ms-3 text-white">Portfolio</span>
 		</a>
+
+		<ul class="nav top-menu">
+			<li class="nav-item">
+				<a target="_blank" class="nav-link" href="https://hubariev.com">
+					CV site
+				</a>
+			</li>
+		</ul>
 	</header>
 </template>
 
@@ -23,5 +31,22 @@ export default {
 header {
 	opacity: 0.8;
 	box-shadow: 0 10px 20px var(--bs-dark);
+}
+
+.top-menu a,
+.top-menu a:hover {
+	color: var(--bs-light);
+}
+.top-menu li a::after {
+	content: "";
+	display: block;
+	width: 100%;
+	background-color: var(--bs-light);
+	height: 1px;
+	transition: all 0.5s;
+	transform: scale(0);
+}
+.top-menu li a:hover::after {
+	transform: scale(1);
 }
 </style>
