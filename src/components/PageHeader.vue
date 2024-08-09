@@ -1,7 +1,7 @@
 <template>
 	<!-- The site header -->
 	<header
-		class="sticky-top d-flex flex-wrap align-content-center py-3 px-sm-1 px-md-4 bg-black"
+		class="d-flex flex-wrap align-content-center py-3 px-sm-1 px-md-4 bg-black"
 	>
 		<a
 			href="#"
