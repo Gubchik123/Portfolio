@@ -1,6 +1,6 @@
 <template>
 	<!-- The site footer -->
-	<footer class="py-4 bg-black mt-5">
+	<footer class="py-4 bg-black">
 		<div class="container">
 			<div class="row">
 				<!-- The block with my social network links -->
