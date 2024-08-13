@@ -6,14 +6,22 @@
 					<li
 						:key="menu"
 						v-for="(active, menu) in menus"
+						:class="{
+							active: active,
+							filter: activeFilters[menu].length,
+						}"
 						data-bs-toggle="collapse"
+						@click="setMenu(menu, active)"
 						:aria-controls="menu + '-collapse'"
 						:data-bs-target="'#' + menu + '-collapse'"
 						class="nav-item nav-link text-capitalize cursor-pointer"
 					>
 						{{ menu }}
 					</li>
-					<li class="nav-item nav-link clear cursor-pointer">
+					<li
+						@click="clearAllFilters"
+						class="nav-item nav-link clear cursor-pointer"
+					>
 						Clear all
 					</li>
 				</ul>
@@ -40,6 +48,7 @@
 				<span
 					:key="option"
 					v-for="(active, option) in options"
+					@click="setFilter(filter, option)"
 					class="badge me-1 mb-1 cursor-pointer"
 					:class="{
 						'text-primary border border-primary bg-transparent':
@@ -54,7 +63,7 @@
 		<transition-group name="project" tag="div" class="row d-flex flex-wrap">
 			<div
 				:key="project.id"
-				v-for="project in projects"
+				v-for="project in list"
 				class="col-lg-4 col-md-6 col-sm-12 mb-3"
 			>
 				<div :id="project.id" class="card h-100 shadow-lg">
@@ -149,6 +158,76 @@ export default {
 			filters: { status: {}, categories: {}, stack: {} },
 			menus: { status: false, categories: false, stack: false },
 		};
+	},
+
+	computed: {
+		activeMenu() {
+			return Object.keys(this.menus).reduce(
+				($$, set, i) => (this.menus[set] ? i : $$),
+				-1
+			);
+		},
+
+		list() {
+			let { status, categories, stack } = this.activeFilters;
+
+			let temp = this.projects.filter(
+				({ deploy_status, category, skills }) => {
+					if (status.length && !status.includes(deploy_status))
+						return false;
+					if (categories.length && !categories.includes(category))
+						return false;
+					return (
+						!stack.length ||
+						stack.every((skill) => skills.includes(skill))
+					);
+				}
+			);
+			console.log(temp);
+			return temp;
+		},
+
+		activeFilters() {
+			let { status, categories, stack } = this.filters;
+
+			return {
+				status: Object.keys(status).filter((c) => status[c]),
+				categories: Object.keys(categories).filter(
+					(c) => categories[c]
+				),
+				stack: Object.keys(stack).filter((c) => stack[c]),
+			};
+		},
+	},
+
+	methods: {
+		setFilter(filter, option) {
+			if (filter === "stack") {
+				this.filters[filter][option] = !this.filters[filter][option];
+			} else {
+				setTimeout(() => {
+					this.clearFilter(
+						filter,
+						option,
+						this.filters[filter][option]
+					);
+				}, 100);
+			}
+		},
+
+		clearFilter(filter, except, active) {
+			Object.keys(this.filters[filter]).forEach((option) => {
+				this.filters[filter][option] = except === option && !active;
+			});
+		},
+
+		clearAllFilters() {
+			Object.keys(this.filters).forEach(this.clearFilter);
+		},
+
+		setMenu(menu, active) {
+			this.menus[menu] = !active;
+		},
 	},
 
 	beforeMount() {
