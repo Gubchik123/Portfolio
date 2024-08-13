@@ -44,20 +44,15 @@
 			v-for="(options, filter) in filters"
 			:id="filter + '-collapse'"
 		>
-			<div class="bg-light p-4 rounded-4 mb-3">
-				<span
+			<div class="bg-light px-3 py-2 rounded-4 mb-3">
+				<BadgeComponent
+					:type="filter"
 					:key="option"
+					:active="active"
+					:option="option"
 					v-for="(active, option) in options"
 					@click="setFilter(filter, option)"
-					class="badge me-1 mb-1 cursor-pointer"
-					:class="{
-						'text-primary border border-primary bg-transparent':
-							!active,
-						'text-white bg-primary': active,
-					}"
-				>
-					{{ option }}
-				</span>
+				/>
 			</div>
 		</div>
 		<transition-group name="project" tag="div" class="row d-flex flex-wrap">
@@ -90,33 +85,26 @@
 								"
 								>{{ project.name }}</a
 							>
-							<a
-								target="_blank"
-								:href="
-									project.url
-										? project.url
-										: 'javascript:void(0)'
+							<BadgeComponent
+								:type="'status'"
+								:active="filters.status[project.deploy_status]"
+								:option="project.deploy_status"
+								@click="
+									setFilter('status', project.deploy_status)
 								"
-								class="badge rounded-pill content-center text-decoration-none"
-								:class="{
-									'text-bg-success':
-										project.deploy_status === 'Deployed',
-									'text-bg-secondary':
-										project.deploy_status === 'Paused',
-									'text-bg-danger':
-										project.deploy_status ===
-										'Not deployed',
-								}"
-							>
-								{{ project.deploy_status }}
-							</a>
+							/>
 						</h5>
 						<h6
 							class="card-subtitle d-flex justify-content-between my-2"
 						>
-							<span>
-								{{ project.category }}
-							</span>
+							<BadgeComponent
+								:type="'categories'"
+								:active="filters.categories[project.category]"
+								:option="project.category"
+								@click="
+									setFilter('categories', project.category)
+								"
+							/>
 							<a target="_blank" :href="project.repo.url">
 								{{ project.repo.platform }}
 							</a>
@@ -125,20 +113,15 @@
 							class="card-text mb-2"
 							v-html="project.description"
 						></p>
-						<div class="my-0">
-							<span
+						<div class="mt-1">
+							<BadgeComponent
 								:key="skill"
 								v-for="skill in project.skills"
-								class="badge me-1 mb-1"
-								:class="{
-									'text-primary border border-primary bg-transparent':
-										!filters.stack[skill],
-									'text-white bg-primary':
-										filters.stack[skill],
-								}"
-							>
-								{{ skill }}
-							</span>
+								:type="'stack'"
+								:option="skill"
+								:active="filters.stack[skill]"
+								@click="setFilter('stack', skill)"
+							/>
 						</div>
 					</div>
 				</div>
@@ -150,8 +133,13 @@
 <script>
 import projects from "../projects";
 
+import BadgeComponent from "./BadgeComponent.vue";
+
 export default {
 	name: "MainSection",
+	components: {
+		BadgeComponent,
+	},
 	data() {
 		return {
 			projects: projects,
