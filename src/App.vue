@@ -23,5 +23,5 @@ export default {
 </script>
 
 <style>
-@import url("./assets/style.css");
+@import url("./assets/css/style.css");
 </style>

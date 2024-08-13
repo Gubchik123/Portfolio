@@ -244,5 +244,5 @@ export default {
 </script>
 
 <style>
-@import url("../assets/main.css");
+@import url("../assets/css/main.css");
 </style>
