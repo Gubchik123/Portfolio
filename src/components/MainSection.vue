@@ -1,5 +1,56 @@
 <template>
-	<main class="container my-3">
+	<main class="container">
+		<nav class="navbar navbar-expand-sm bg-light my-3 rounded-4">
+			<div class="container-fluid">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li
+						:key="menu"
+						v-for="(active, menu) in menus"
+						data-bs-toggle="collapse"
+						:aria-controls="menu + '-collapse'"
+						:data-bs-target="'#' + menu + '-collapse'"
+						class="nav-item nav-link text-capitalize cursor-pointer"
+					>
+						{{ menu }}
+					</li>
+					<li class="nav-item nav-link clear cursor-pointer">
+						Clear all
+					</li>
+				</ul>
+				<form class="d-flex" role="search">
+					<input
+						class="form-control me-2"
+						type="search"
+						placeholder="Search"
+						aria-label="Search"
+					/>
+					<button class="btn btn-outline-success" type="submit">
+						Search
+					</button>
+				</form>
+			</div>
+		</nav>
+		<div
+			class="collapse rounded-4"
+			:key="filter"
+			v-for="(options, filter) in filters"
+			:id="filter + '-collapse'"
+		>
+			<div class="bg-light p-4 rounded-4 mb-3">
+				<span
+					:key="option"
+					v-for="(active, option) in options"
+					class="badge me-1 mb-1 cursor-pointer"
+					:class="{
+						'text-primary border border-primary bg-transparent':
+							!active,
+						'text-white bg-primary': active,
+					}"
+				>
+					{{ option }}
+				</span>
+			</div>
+		</div>
 		<transition-group name="project" tag="div" class="row d-flex flex-wrap">
 			<div
 				:key="project.id"
@@ -69,7 +120,13 @@
 							<span
 								:key="skill"
 								v-for="skill in project.skills"
-								class="badge text-bg-primary me-1"
+								class="badge me-1 mb-1"
+								:class="{
+									'text-primary border border-primary bg-transparent':
+										!filters.stack[skill],
+									'text-white bg-primary':
+										filters.stack[skill],
+								}"
 							>
 								{{ skill }}
 							</span>
@@ -89,7 +146,20 @@ export default {
 	data() {
 		return {
 			projects: projects,
+			filters: { status: {}, categories: {}, stack: {} },
+			menus: { status: false, categories: false, stack: false },
 		};
+	},
+
+	beforeMount() {
+		this.projects.forEach(({ deploy_status, category, skills }) => {
+			this.filters.status[deploy_status] = false;
+			this.filters.categories[category] = false;
+
+			skills.forEach((skill) => {
+				this.filters.stack[skill] = false;
+			});
+		});
 	},
 };
 </script>
@@ -98,12 +168,51 @@ export default {
 main {
 	flex: 1;
 }
-a[href="javascript:void(0)"] {
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.nav-link::after {
+	content: "\00d7";
+	display: inline-block;
+	color: transparent;
+	width: 0.5rem;
+	font-weight: 400;
+	transform: scale(0);
+	transition: transform 150ms ease-in-out;
+}
+.nav-link.clear {
+	color: #f68185;
+	opacity: 0;
+	transform: translate3d(-25%, 0, 0);
+	pointer-events: none;
+	transition: all 275ms ease-in-out;
+}
+.nav-link.filter ~ .nav-link.clear {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+	pointer-events: auto;
+}
+.nav-link.filter::after,
+.nav-link.active::after {
+	transform: scale(1);
+}
+.nav-link.filter::after {
+	content: "\2022";
+	color: #46d2c4;
+}
+.nav-link.active::after {
+	content: "\00d7";
+	color: #f68185;
+}
+
+.row a[href="javascript:void(0)"] {
 	opacity: 1;
 	cursor: unset;
 	text-decoration: none;
 }
-a[href="javascript:void(0)"]:hover {
+.row a[href="javascript:void(0)"]:hover {
 	color: unset;
 }
 </style>
