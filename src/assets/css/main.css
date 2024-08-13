@@ -48,3 +48,12 @@ main {
 .row a[href="javascript:void(0)"]:hover {
 	color: unset;
 }
+
+@media screen and (max-width: 560px) {
+    form {
+        width: 100%;
+    }
+    .me-sm-0 {
+        margin-right: 0 !important;
+    }
+}

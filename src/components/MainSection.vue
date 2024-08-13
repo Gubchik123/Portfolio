@@ -27,14 +27,12 @@
 				</ul>
 				<form class="d-flex" role="search">
 					<input
-						class="form-control me-2"
+						v-model="search"
 						type="search"
 						placeholder="Search"
 						aria-label="Search"
+						class="form-control me-2 me-sm-0"
 					/>
-					<button class="btn btn-outline-success" type="submit">
-						Search
-					</button>
 				</form>
 			</div>
 		</nav>
@@ -145,6 +143,7 @@ export default {
 			projects: projects,
 			filters: { status: {}, categories: {}, stack: {} },
 			menus: { status: false, categories: false, stack: false },
+			search: "",
 		};
 	},
 
@@ -159,20 +158,21 @@ export default {
 		list() {
 			let { status, categories, stack } = this.activeFilters;
 
-			let temp = this.projects.filter(
-				({ deploy_status, category, skills }) => {
-					if (status.length && !status.includes(deploy_status))
-						return false;
-					if (categories.length && !categories.includes(category))
-						return false;
-					return (
-						!stack.length ||
-						stack.every((skill) => skills.includes(skill))
-					);
-				}
-			);
-			console.log(temp);
-			return temp;
+			return this.projects.filter((project) => {
+				if (
+					!project.name.includes(this.search) &&
+					!project.description.includes(this.search)
+				)
+					return false;
+				if (status.length && !status.includes(project.deploy_status))
+					return false;
+				if (categories.length && !categories.includes(project.category))
+					return false;
+				return (
+					!stack.length ||
+					stack.every((skill) => project.skills.includes(skill))
+				);
+			});
 		},
 
 		activeFilters() {
