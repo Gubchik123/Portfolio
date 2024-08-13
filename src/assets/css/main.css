@@ -49,11 +49,32 @@ main {
 	color: unset;
 }
 
+.project-move {
+	transition: all 600ms ease-in-out 50ms;
+}
+.project-enter-active {
+	transition: all 300ms ease-out;
+}
+
+.project-leave-active {
+	transition: all 450ms ease-in;
+	position: absolute;
+	z-index: 0;
+}
+
+.project-enter,
+.project-leave-to {
+	opacity: 0;
+}
+.project-enter {
+	transform: scale(0.9);
+}
+
 @media screen and (max-width: 560px) {
-    form {
-        width: 100%;
-    }
-    .me-sm-0 {
-        margin-right: 0 !important;
-    }
+	form {
+		width: 100%;
+	}
+	.me-sm-0 {
+		margin-right: 0 !important;
+	}
 }
