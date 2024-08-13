@@ -1,0 +1,50 @@
+main {
+	flex: 1;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.nav-link::after {
+	content: "\00d7";
+	display: inline-block;
+	color: transparent;
+	width: 0.5rem;
+	font-weight: 400;
+	transform: scale(0);
+	transition: transform 150ms ease-in-out;
+}
+.nav-link.clear {
+	color: #f68185;
+	opacity: 0;
+	transform: translate3d(-25%, 0, 0);
+	pointer-events: none;
+	transition: all 275ms ease-in-out;
+}
+.nav-link.filter ~ .nav-link.clear {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+	pointer-events: auto;
+}
+.nav-link.filter::after,
+.nav-link.active::after {
+	transform: scale(1);
+}
+.nav-link.filter::after {
+	content: "\2022";
+	color: #46d2c4;
+}
+.nav-link.active::after {
+	content: "\00d7";
+	color: #f68185;
+}
+
+.row a[href="javascript:void(0)"] {
+	opacity: 1;
+	cursor: unset;
+	text-decoration: none;
+}
+.row a[href="javascript:void(0)"]:hover {
+	color: unset;
+}
