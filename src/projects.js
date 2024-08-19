@@ -87,6 +87,35 @@ export default [
         description: "The bot for jokes and memes.",
         skills: ["Python", "asyncio", "aiogram", "Parsing", "Git", "GitHub", "VSCode", "Railway"]
     },
+    // Test tasks
+    {
+        id: "dZENcode-test-task",
+        name: "dZENcode test task",
+        category: "Test task",
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/dZENcode-test-task/master/static/images/site_header.webp",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/dZENcode-test-task",
+        },
+        description: "The test task for the dZENcode company. The landing page for leaving comments.",
+        skills: ["Python", "Django", "SQL", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap5", "UnitTest", "Git", "GitHub", "VSCode"]
+    },
+    {
+        id: "DrumNCode-test-task",
+        name: "DrumNCode test task",
+        category: "Test task",
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/DrumNCode-test-task/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/DrumNCode-test-task",
+        },
+        description: "The test task for the DrumNCode company. API for book library management.",
+        skills: ["Python", "Django", "DRF", "UnitTest", "SQL", "PostgreSQL", "Git", "GitHub", "VSCode"]
+    },
     // REST APIs
     {
         id: "LapZoneAPI",
