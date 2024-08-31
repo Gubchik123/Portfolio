@@ -147,6 +147,12 @@ export default {
 		};
 	},
 
+    watch: {
+        search() {
+            this.updateQueryParams();
+        }
+    },
+
 	computed: {
 		activeMenu() {
 			return Object.keys(this.menus).reduce(
@@ -201,13 +207,39 @@ export default {
 					);
 				}, 100);
 			}
+            this.updateQueryParams();
 		},
 
 		clearFilter(filter, except, active) {
 			Object.keys(this.filters[filter]).forEach((option) => {
 				this.filters[filter][option] = except === option && !active;
 			});
+            this.updateQueryParams();
 		},
+
+        updateQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            ['status', 'categories', 'stack'].forEach(filter => {
+                const keys = Object.keys(this.filters[filter]).filter(key => this.filters[filter][key]);
+                if (keys.length > 0) params.set(filter, keys.join(','));
+                else params.delete(filter);
+            });
+            if (this.search) params.set('search', this.search);
+            window.history.pushState({}, '', '?' + params.toString());
+        },
+
+        parseQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            this.search = params.get('search') || "";
+            ['status', 'categories', 'stack'].forEach(filter => {
+                const keys = params.get(filter);
+                if (keys) {
+                    keys.split(',').forEach(key => {
+                        this.setFilter(filter, key);
+                    });
+                }
+            });
+        },
 
 		clearAllFilters() {
 			Object.keys(this.filters).forEach(this.clearFilter);
@@ -219,6 +251,7 @@ export default {
 	},
 
 	beforeMount() {
+        this.parseQueryParams();
 		this.projects.forEach(({ deploy_status, category, skills }) => {
 			this.filters.status[deploy_status] = false;
 			this.filters.categories[category] = false;
