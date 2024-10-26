@@ -116,6 +116,20 @@ export default [
         description: "The test task for the DrumNCode company. API for book library management.",
         skills: ["Python", "Django", "DRF", "UnitTest", "SQL", "PostgreSQL", "Git", "GitHub", "VSCode"]
     },
+    {
+        id: "Starnavi-test-task",
+        name: "Starnavi test task",
+        category: "Test task",
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/Startnavi-test-task/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/Startnavi-test-task",
+        },
+        description: "The test task for the Starnavi company. API for managing posts and comments with AI moderation and auto-reply.",
+        skills: ["Python", "Django", "DRF", "Celery", "Redis", "Docker", "UnitTest", "SQL", "PostgreSQL", "Git", "GitHub", "VSCode"]
+    },
     // REST APIs
     {
         id: "LapZoneAPI",
