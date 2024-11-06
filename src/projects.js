@@ -1,11 +1,11 @@
 export default [
     // TODO: Sub-stack for some stacks. Ex: Django - (allauth, ckeditor, etc.)
     // TODO: Add demo_images for some projects
-    // Sites
+    // Sites using templates
     {
         id: "LapZone",
         name: "LapZone",
-        categories: ["Site"],
+        categories: ["Site", "Using templates"],
         deploy_status: "Deployed",
         url: "https://lapzone.store/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/LapZone/master/static/images/site_header.webp",
@@ -19,7 +19,7 @@ export default [
     {
         id: "ITish",
         name: "ITish",
-        categories: ["Site"],
+        categories: ["Site", "Using templates"],
         deploy_status: "Deployed",
         url: "https://itish.site/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/ITish/master/md_images/readme_header.png",
@@ -29,34 +29,6 @@ export default [
         },
         description: "The blog site with registration to publish posts on the IT topic.",
         skills: ["Python", "Flask", "SQL", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap5", "PyTest", "Git", "GitHub", "VSCode", "Azure"]
-    },
-    {
-        id: "LapZoneAPI-frontend",
-        name: "LapZoneAPI frontend",
-        categories: ["Site"],
-        deploy_status: "Not deployed",
-        url: null,
-        header_image: "https://raw.githubusercontent.com/Gubchik123/LapZoneAPI-frontend/master/header.png",
-        repo: {
-            platform: "GitHub",
-            url: "https://github.com/Gubchik123/LapZoneAPI-frontend"
-        },
-        description: "The frontend for the <a href='#LapZoneAPI'>LapZoneAPI</a>.",
-        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
-    },
-    {
-        id: "ITishAPI-frontend",
-        name: "ITishAPI frontend",
-        categories: ["Site"],
-        deploy_status: "Not deployed",
-        url: null,
-        header_image: "https://raw.githubusercontent.com/Gubchik123/ITishAPI-frontend/master/header.png",
-        repo: {
-            platform: "GitHub",
-            url: "https://github.com/Gubchik123/ITishAPI-frontend"
-        },
-        description: "The frontend for the <a href='#ITishAPI'>ITishAPI</a>.",
-        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
     },
     // Telegram bots
     {
@@ -201,6 +173,35 @@ export default [
         },
         description: "The gRPC services for the <a href='#ITish'>ITish</a> site.",
         skills: ["Python", "gRPC", "SQL", "SQLite", "SQLAlchemy", "Git", "GitHub", "VSCode"]
+    },
+    // Sites depends on APIs
+    {
+        id: "LapZoneAPI-frontend",
+        name: "LapZoneAPI frontend",
+        categories: ["Site", "Depends on API"],
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/LapZoneAPI-frontend/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/LapZoneAPI-frontend"
+        },
+        description: "The frontend for the <a href='#LapZoneAPI'>LapZoneAPI</a>.",
+        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
+    },
+    {
+        id: "ITishAPI-frontend",
+        name: "ITishAPI frontend",
+        categories: ["Site", "Depends on API"],
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/ITishAPI-frontend/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/ITishAPI-frontend"
+        },
+        description: "The frontend for the <a href='#ITishAPI'>ITishAPI</a>.",
+        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
     },
     // Landings without backend
     {
