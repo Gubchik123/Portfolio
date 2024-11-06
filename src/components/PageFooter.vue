@@ -25,7 +25,7 @@
 					<a
 						target="_blank"
 						class="btn btn-outline-light ms-2"
-						href="https://www.instagram.com/notwhale.1746/"
+						href="https://www.instagram.com/notwhale.1691/"
 					>
 						<ion-icon name="logo-instagram"></ion-icon>
 					</a>
