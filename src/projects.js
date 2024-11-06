@@ -5,7 +5,7 @@ export default [
     {
         id: "LapZone",
         name: "LapZone",
-        category: "Site",
+        categories: ["Site"],
         deploy_status: "Deployed",
         url: "https://lapzone.store/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/LapZone/master/static/images/site_header.webp",
@@ -19,7 +19,7 @@ export default [
     {
         id: "ITish",
         name: "ITish",
-        category: "Site",
+        categories: ["Site"],
         deploy_status: "Deployed",
         url: "https://itish.site/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/ITish/master/md_images/readme_header.png",
@@ -30,11 +30,39 @@ export default [
         description: "The blog site with registration to publish posts on the IT topic.",
         skills: ["Python", "Flask", "SQL", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap5", "PyTest", "Git", "GitHub", "VSCode", "Azure"]
     },
+    {
+        id: "LapZoneAPI-frontend",
+        name: "LapZoneAPI frontend",
+        categories: ["Site"],
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/LapZoneAPI-frontend/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/LapZoneAPI-frontend"
+        },
+        description: "The frontend for the <a href='#LapZoneAPI'>LapZoneAPI</a>.",
+        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
+    },
+    {
+        id: "ITishAPI-frontend",
+        name: "ITishAPI frontend",
+        categories: ["Site"],
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/ITishAPI-frontend/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/ITishAPI-frontend"
+        },
+        description: "The frontend for the <a href='#ITishAPI'>ITishAPI</a>.",
+        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
+    },
     // Telegram bots
     {
         id: "WeatherBot",
         name: "WeatherBot",
-        category: "Telegram bot",
+        categories: ["Telegram bot"],
         deploy_status: "Deployed",
         url: "https://t.me/WeatherGubchikBot",
         header_image: "https://raw.githubusercontent.com/Gubchik123/WeatherGubchikBot/master/images/WeatherGubchikBot_header.png",
@@ -48,7 +76,7 @@ export default [
     {
         id: "JobsDOUBot",
         name: "JobsDOUBot",
-        category: "Telegram bot",
+        categories: ["Telegram bot"],
         deploy_status: "Deployed",
         url: "https://t.me/DOUGubchikBot",
         header_image: "https://raw.githubusercontent.com/Gubchik123/DOUGubchikBot/master/header.png",
@@ -62,7 +90,7 @@ export default [
     {
         id: "EasyPostBot",
         name: "EasyPostBot",
-        category: "Telegram bot",
+        categories: ["Telegram bot"],
         deploy_status: "Paused",
         url: "https://t.me/PostGubchikBot",
         header_image: "https://raw.githubusercontent.com/Gubchik123/PostGubchikBot/master/header.png",
@@ -76,7 +104,7 @@ export default [
     {
         id: "SmileBot",
         name: "SmileBot",
-        category: "Telegram bot",
+        categories: ["Telegram bot"],
         deploy_status: "Paused",
         url: "https://t.me/SmileGubchikBot",
         header_image: "https://raw.githubusercontent.com/Gubchik123/SmileGubchikBot/master/md_images/SmileGubchikBot.png",
@@ -91,7 +119,7 @@ export default [
     {
         id: "dZENcode-test-task",
         name: "dZENcode test task",
-        category: "Test task",
+        categories: ["Test task", "Site", "Landing"],
         deploy_status: "Not deployed",
         url: null,
         header_image: "https://raw.githubusercontent.com/Gubchik123/dZENcode-test-task/master/static/images/site_header.webp",
@@ -105,7 +133,7 @@ export default [
     {
         id: "DrumNCode-test-task",
         name: "DrumNCode test task",
-        category: "Test task",
+        categories: ["Test task", "REST API"],
         deploy_status: "Not deployed",
         url: null,
         header_image: "https://raw.githubusercontent.com/Gubchik123/DrumNCode-test-task/master/header.png",
@@ -119,7 +147,7 @@ export default [
     {
         id: "Starnavi-test-task",
         name: "Starnavi test task",
-        category: "Test task",
+        categories: ["Test task", "REST API"],
         deploy_status: "Not deployed",
         url: null,
         header_image: "https://raw.githubusercontent.com/Gubchik123/Startnavi-test-task/master/header.png",
@@ -134,7 +162,7 @@ export default [
     {
         id: "LapZoneAPI",
         name: "LapZoneAPI",
-        category: "REST API",
+        categories: ["REST API"],
         deploy_status: "Not deployed",
         url: null,
         header_image: "https://raw.githubusercontent.com/Gubchik123/LapZoneAPI/master/header.png",
@@ -148,7 +176,7 @@ export default [
     {
         id: "ITishAPI",
         name: "ITishAPI",
-        category: "REST API",
+        categories: ["REST API"],
         deploy_status: "Not deployed",
         url: null,
         header_image: "https://raw.githubusercontent.com/Gubchik123/ITishAPI/master/header.png",
@@ -163,7 +191,7 @@ export default [
     {
         id: "ITish-gRPC",
         name: "ITish gRPC",
-        category: "gRPC",
+        categories: ["gRPC"],
         deploy_status: "Not deployed",
         url: null,
         header_image: "https://raw.githubusercontent.com/Gubchik123/ITish-gRPC/master/header.png",
@@ -174,11 +202,11 @@ export default [
         description: "The gRPC services for the <a href='#ITish'>ITish</a> site.",
         skills: ["Python", "gRPC", "SQL", "SQLite", "SQLAlchemy", "Git", "GitHub", "VSCode"]
     },
-    // Static sites
+    // Landings without backend
     {
         id: "CV-site",
         name: "CV site",
-        category: "Static site",
+        categories: ["Landing", "Without backend"],
         deploy_status: "Deployed",
         url: "https://hubariev.com/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/CV-site/master/md_images/header.png",
@@ -192,7 +220,7 @@ export default [
     {
         id: "Post-HTML-generator",
         name: "Post HTML generator",
-        category: "Static site",
+        categories: ["Landing", "Without backend"],
         deploy_status: "Deployed",
         url: "https://html.hubariev.com/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/Post-HTML-generator/master/static/images/md_header.png",
@@ -203,11 +231,10 @@ export default [
         description: "The site for generating post HTML using easy interface and usable buttons (the 'New post' page from the <a href='#ITish'>ITish</a> site).",
         skills: ["HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode", "Netlify"]
     },
-    // Vue.js sites
     {
         id: "Portfolio",
         name: "Portfolio",
-        category: "Vue.js site",
+        categories: ["Landing", "Without backend"],
         deploy_status: "Deployed",
         url: "https://portfolio.hubariev.com/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/Portfolio/master/md_images/header.png",
@@ -219,37 +246,9 @@ export default [
         skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode", "Netlify"]
     },
     {
-        id: "LapZoneAPI-frontend",
-        name: "LapZoneAPI frontend",
-        category: "Vue.js site",
-        deploy_status: "Not deployed",
-        url: null,
-        header_image: "https://raw.githubusercontent.com/Gubchik123/LapZoneAPI-frontend/master/header.png",
-        repo: {
-            platform: "GitHub",
-            url: "https://github.com/Gubchik123/LapZoneAPI-frontend"
-        },
-        description: "The frontend for the <a href='#LapZoneAPI'>LapZoneAPI</a>.",
-        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
-    },
-    {
-        id: "ITishAPI-frontend",
-        name: "ITishAPI frontend",
-        category: "Vue.js site",
-        deploy_status: "Not deployed",
-        url: null,
-        header_image: "https://raw.githubusercontent.com/Gubchik123/ITishAPI-frontend/master/header.png",
-        repo: {
-            platform: "GitHub",
-            url: "https://github.com/Gubchik123/ITishAPI-frontend"
-        },
-        description: "The frontend for the <a href='#ITishAPI'>ITishAPI</a>.",
-        skills: ["Vue.js", "HTML", "CSS", "JavaScript", "Bootstrap5", "Git", "GitHub", "VSCode"]
-    },
-    {
         id: "Weather-app",
         name: "Weather app",
-        category: "Vue.js site",
+        categories: ["Landing", "Without backend"],
         deploy_status: "Deployed",
         url: "https://weather.hubariev.com/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/Vue-weather-app/master/src/assets/header.png",
@@ -263,7 +262,7 @@ export default [
     {
         id: "Calculator",
         name: "Calculator",
-        category: "Vue.js site",
+        categories: ["Landing", "Without backend"],
         deploy_status: "Deployed",
         url: "https://calculator.hubariev.com/",
         header_image: "https://raw.githubusercontent.com/Gubchik123/Vue-calculator/master/src/assets/header.png",
@@ -277,8 +276,8 @@ export default [
     // Obsidian plugins
     {
         id: "obsidian-movie-search-plugin",
-        name: "Obsidian Movie Search Plugin",
-        category: "Obsidian plugin",
+        name: "Movie Search",
+        categories: ["Obsidian plugin"],
         deploy_status: "Deployed",
         url: "https://obsidian.md/plugins?id=movie-search",
         header_image: "https://raw.githubusercontent.com/Gubchik123/obsidian-movie-search-plugin/master/md_images/header.png",

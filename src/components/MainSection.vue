@@ -95,14 +95,16 @@
 						<h6
 							class="card-subtitle d-flex justify-content-between my-2"
 						>
-							<BadgeComponent
-								:type="'categories'"
-								:active="filters.categories[project.category]"
-								:option="project.category"
-								@click="
-									setFilter('categories', project.category)
-								"
-							/>
+                            <div>
+                                <BadgeComponent
+                                    :key="category"
+                                    v-for="category in project.categories"
+                                    :type="'categories'"
+                                    :option="category"
+                                    :active="filters.categories[category]"
+                                    @click="setFilter('categories', category)"
+                                />
+                            </div>
 							<a target="_blank" :href="project.repo.url">
 								{{ project.repo.platform }}
 							</a>
@@ -172,8 +174,13 @@ export default {
 					return false;
 				if (status.length && !status.includes(project.deploy_status))
 					return false;
-				if (categories.length && !categories.includes(project.category))
-					return false;
+				// if (categories.length && !categories.includes(project.categories))
+				// 	return false;
+                if (
+                    categories.length &&
+                    !categories.every((category) => project.categories.includes(category))
+                )
+                    return false;
 				return (
 					!stack.length ||
 					stack.every((skill) => project.skills.includes(skill))
@@ -196,7 +203,7 @@ export default {
 
 	methods: {
 		setFilter(filter, option) {
-			if (filter === "stack") {
+			if (filter != "status") {
 				this.filters[filter][option] = !this.filters[filter][option];
 			} else {
 				setTimeout(() => {
@@ -252,10 +259,11 @@ export default {
 
 	beforeMount() {
         this.parseQueryParams();
-		this.projects.forEach(({ deploy_status, category, skills }) => {
+		this.projects.forEach(({ deploy_status, categories, skills }) => {
 			this.filters.status[deploy_status] = false;
-			this.filters.categories[category] = false;
-
+            categories.forEach((category) => {
+                this.filters.categories[category] = false;
+            });
 			skills.forEach((skill) => {
 				this.filters.stack[skill] = false;
 			});
