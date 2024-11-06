@@ -91,7 +91,7 @@ export default [
     {
         id: "dZENcode-test-task",
         name: "dZENcode test task",
-        categories: ["Test task", "Site", "Landing"],
+        categories: ["Test task", "Site", "Landing", "Using templates"],
         deploy_status: "Not deployed",
         url: null,
         header_image: "https://raw.githubusercontent.com/Gubchik123/dZENcode-test-task/master/static/images/site_header.webp",
