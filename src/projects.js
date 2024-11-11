@@ -130,6 +130,20 @@ export default [
         description: "The test task for the Starnavi company. API for managing posts and comments with AI moderation and auto-reply.",
         skills: ["Python", "Django", "DRF", "Celery", "Redis", "Docker", "UnitTest", "SQL", "PostgreSQL", "Git", "GitHub", "VSCode"]
     },
+    {
+        id: "ApplicationsGubchikBot",
+        name: "ApplicationsGubchikBot",
+        categories: ["Test task", "Telegram bot"],
+        deploy_status: "Not deployed",
+        url: null,
+        header_image: "https://raw.githubusercontent.com/Gubchik123/ApplicationsGubchikBot/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/ApplicationsGubchikBot"
+        },
+        description: "The bot for sending applications to any sites with a form.",
+        skills: ["Python", "asyncio", "aiogram", "Parsing", "Git", "GitHub", "VSCode"]
+    },
     // REST APIs
     {
         id: "LapZoneAPI",
