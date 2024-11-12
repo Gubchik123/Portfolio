@@ -144,6 +144,20 @@ export default [
         description: "The bot for sending applications to any sites with a form.",
         skills: ["Python", "asyncio", "aiogram", "Parsing", "Git", "GitHub", "VSCode"]
     },
+    {
+        id: "ResumesGubchikBot",
+        name: "Robomate test task",
+        categories: ["Test task", "Telegram bot"],
+        deploy_status: "Deployed",
+        url: "https://t.me/ResumesGubchikBot",
+        header_image: "https://raw.githubusercontent.com/Gubchik123/ResumesGubchikBot/master/header.png",
+        repo: {
+            platform: "GitHub",
+            url: "https://github.com/Gubchik123/ResumesGubchikBot"
+        },
+        description: "The test task for the Robomate company. The telegram bot for finding resumes from popular work sites.",
+        skills: ["Python", "asyncio", "aiogram", "Parsing", "Git", "GitHub", "VSCode", "Railway"]
+    },
     // REST APIs
     {
         id: "LapZoneAPI",
